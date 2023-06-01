@@ -10,12 +10,11 @@ public class Main {
     public static void main(String[] args) throws SerialPortException{
 
         System.out.println("test");
-        System.out.println(SerialPortList.getPortNames().length);
 
 
-        SerialPort serialPort = new SerialPort(SerialPortList.getPortNames()[0]);
+        SerialPort serialPort = new SerialPort("USB\\ROOT_HUB20");
         serialPort.openPort();//Open serial port
-        serialPort.setParams(4800, 8, 1, 0);//Set params
+        serialPort.setParams(9600, 8, 1, 0);//Set params
 
         int i = 0;
         while (i < 10) {
